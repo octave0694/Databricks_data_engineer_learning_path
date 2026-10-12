@@ -71,6 +71,7 @@ Most importants topics to master Databricks.
 - [No More SQL Queries – Databricks Genie Generates KPIs on Demand](https://www.youtube.com/watch?v=3eKal2VtlGY)
 - [What is Databricks Agent Bricks? | AI Agents, Use Cases & Products](https://www.youtube.com/watch?v=dgEuytjykhM)
 - [Databricks Agent Bricks Knowledge Assistant | RAG Made Easy (No Code)](https://www.youtube.com/watch?v=EofTClwTVqc)
+- [Build Conversational Genie Agent in Databricks](https://www.youtube.com/watch?v=c07-Ikyc8dk)
 
 #### Dashboard
 - [Databricks Dashboard from Scratch with latest AI features](https://www.youtube.com/watch?v=vanOstY5Jes)
