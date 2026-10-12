@@ -64,7 +64,7 @@ Most importants topics to master Databricks.
 - [I Built an Entire Lakeflow Pipeline with Genie Code — Without Writing Code](https://www.youtube.com/watch?v=62_YzHtMfJY)
 
 
-#### Genie (code, agent, space)
+#### Genie (code, agent, one)
 - [Databricks Genie Agents Full Demo and Features](https://www.youtube.com/watch?v=M3nCF7N6dvU)
 - [Databricks Genie Code Full Tutorial | Skills, MCP, Jobs, Notebooks, Dashboards](https://www.youtube.com/watch?v=GDqt2QujR7w)
 - [Databricks Genie Ontology Explained - Full Tutorial with Demo](youtube.com/watch?v=JSeSiAAjTKs&pp=0gcJCTcMAYcqIYzv)
