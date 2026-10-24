@@ -1,0 +1,77 @@
+###########################################################################################
+# THIS IS THE MAIN DATABRICKS ASSET BUNDLE CONFIGURATION FOR THE PROJECT                  
+###########################################################################################
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.         #
+###########################################################################################
+
+################
+# Bundle name  
+################
+bundle:                       # Required
+  name: demo04_lab_bundle     # Required
+
+
+#################################################################
+## Additional YAML configurations to include for the deployment
+# - TO DO: Add the relative path to the ./resources/
+#################################################################
+include:
+  - "./resources/lab04_nyc.job.yml"                      ## <--- Add your ./resources/lab04_nyc.job.yml file here
+
+
+################################################################
+# VARIABLES   
+# - TO DO: Complete the custom variables for the bundle
+################################################################
+variables:
+  user_name:
+    description: TODO - PLEASE REPLACE THE TEXT BELOW WITH YOUR LAB USER NAME!!!
+    default: labuser1234       ## <---- Add your lab user name
+
+# Do not modify the variables below. They will use the default value from the user_name variable and create the necessary variables. Please explore the variables below.
+  catalog_dev:
+    description: Development catalog for the project. Append _1_dev to the user name.
+    default: ${var.user_name}_1_dev
+    
+  catalog_prod:
+    description: Production catalog for the project. Append _3_prod to the user name.
+    default: ${var.user_name}_3_prod
+
+
+
+##############################################################################################
+# TARGET DEPLOYMENT ENVIRONMENTS
+# - These are the targets to use for deployments and workflow runs. 
+# - One and only one of these targets can be set to "default: true"
+##############################################################################################
+targets:
+
+  dev:
+    # The default target uses 'mode: development' to create a development copy.
+    # - Deployed resources get prefixed with '[dev my_user_name]'
+    mode: development
+    default: true
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
+    
+    # Add a job parameter for DEV
+    resources:
+      jobs:
+        lab04_dab:
+          parameters:
+            - name: catalog_name
+              default: ${var.catalog_dev}              # <----- Add the development catalog for the job parameter here
+
+
+  prod:
+    mode: production
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
+
+    # Add a job parameter for PROD
+    resources:
+      jobs:
+        lab04_dab:
+          parameters:
+            - name: catalog_name
+              default: ${var.catalog_prod}              # <----- Add the production catalog for the job parameter here

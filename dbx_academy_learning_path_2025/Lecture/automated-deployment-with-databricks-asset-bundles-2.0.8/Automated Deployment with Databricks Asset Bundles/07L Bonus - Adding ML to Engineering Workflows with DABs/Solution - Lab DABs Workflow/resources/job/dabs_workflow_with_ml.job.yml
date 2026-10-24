@@ -1,0 +1,66 @@
+######################################
+# SOLUTION EXAMPLE
+######################################
+# THE JOB CONFIGURATION              #
+######################################
+# NOTE: Notebook path must be with respect to where the YAML file is located
+
+# Example: This YAML file is located in /Workspace/Shared/databricks-devops-for-pipeline-source/Source/Databricks Devops for Pipelines/resrouces/job/ and Run Unit Tests is located in  /Workspace/Shared/databricks-devops-for-pipeline-source/Source/Databricks Devops for Pipelines/. In this case, notebook_path would be ../../Run Unit Tests.ipynb. 
+
+resources:
+  jobs:
+    ml_health_etl_workflow:                          # <----- Job key name 
+      name: ml_health_etl_workflow_${bundle.target}  # <----- Job name
+      description: Final Workflow SDK
+      email_notifications:
+        on_failure:
+          - ${var.my_email}
+      tasks:
+        - task_key: Unit_Tests
+          notebook_task:
+            notebook_path: ../../run_unit_tests.py  #<----- Sets the relative path to the file based on where this file is located
+            source: WORKSPACE
+          description: Execute unit tests for project.
+        - task_key: Visualization
+          depends_on:
+            - task_key: Health_ETL
+          notebook_task:
+            notebook_path: ../../src/Final Visualization.py #<----- Sets the relative path to the file based on where this file is located
+            base_parameters:
+              catalog_name: ${var.target_catalog}
+            source: WORKSPACE
+          description: Final visualization for project.
+        ### ------------------------------------------------------
+        ### Complete your ML TASK HERE
+        ### ------------------------------------------------------
+        - task_key: ML_test  #<----- Name your task ML_test
+          depends_on:
+            - task_key: Health_ETL
+          existing_cluster_id: ${var.cluster_id}  #<----- References your cluster_id variable from variables.yml
+          notebook_task:
+            notebook_path: ../../src/Inference.py #<----- Set the relative path to the Interference.py file based on where this file is located
+            base_parameters:
+              base_model_name: ${var.base_model_name}
+              silver_table_name: ${var.silver_table_name}
+              catalog_name: ${var.target_catalog}
+            source: WORKSPACE
+          description: Inference an ML model.
+        ### ------------------------------------------------------
+        ### END ML TASK 
+        ### ------------------------------------------------------
+        - task_key: Health_ETL
+          depends_on:
+            - task_key: Unit_Tests
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.health_etl_pipeline.id}
+            full_refresh: true
+          description: Delta Live Tables
+      
+      ####################################################
+      # Dynamic Job Parameters Based on Our Variables    #
+      ####################################################
+      parameters:
+        - name: target
+          default: ${bundle.target}
+        - name: catalog_name
+          default: ${var.target_catalog}
