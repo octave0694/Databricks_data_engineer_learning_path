@@ -1,0 +1,16 @@
+######################################################################
+# Job YAML Configuration SOLUTION
+# TO DO: Add the necessary variables to the parameters to dynamically deploy to dev or prod
+######################################################################
+resources:
+  jobs:
+    lab04_dab:
+      name: lab04_dab_${workspace.current_user.userName}             # <----- lab04_dab_ + Append your user name variable value to the end of the job name
+      tasks:
+        - task_key: create_nyc_tables
+          notebook_task:
+            notebook_path: ../src/our_project_code.sql
+            source: WORKSPACE
+      parameters:
+        - name: display_target
+          default: ${bundle.target}       # <---- Add the bundle.target variable here as a job value
