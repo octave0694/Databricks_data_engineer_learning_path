@@ -5,6 +5,7 @@ Most importants topics to master Databricks.
 - [DataBeli Databricks All in One Playlist](https://www.youtube.com/watch?v=Z6HED-PZP-I&list=PLlHuhl-cAAnH30NbAzagvT4FXSWu94uQS)
 - [Data Master Databricks for Everyone 2026 Playlist](https://www.youtube.com/show/VLPL7S7dD8r4QdXCGjN_6NXU0hRpf6C2aAT1?season=AllEpisodes&sbp=CgtBbGxFcGlzb2RlcxoAKgtqekJfNFZRS2VUTUAB)
 - [Ease With Data Databricks - Zero to Hero Playlist](https://www.youtube.com/playlist?list=PL2IsFZBGM_IGiAvVZWAEKX8gg1ItnxEEb)
+- [Databricks Was HARD Until I Learned These 21 CONCEPTS (Databricks Ansh Lamba)](https://www.youtube.com/watch?v=6ZodbPtp2Fs)
 
 #### What is Databricks
 - [Databricks Intro | History | Founders | Major Open Source Projects](https://www.youtube.com/watch?v=rKtFJbokSGc) ✅
@@ -72,6 +73,7 @@ Most importants topics to master Databricks.
 - [What is Databricks Agent Bricks? | AI Agents, Use Cases & Products](https://www.youtube.com/watch?v=dgEuytjykhM)
 - [Databricks Agent Bricks Knowledge Assistant | RAG Made Easy (No Code)](https://www.youtube.com/watch?v=EofTClwTVqc)
 - [Build Conversational Genie Agent in Databricks](https://www.youtube.com/watch?v=c07-Ikyc8dk)
+- [Agent Skills Tutoial: Demo with Claude Code and Databricks Genie Code](https://www.youtube.com/watch?v=pNDkLkqAmeo)
 
 #### Dashboard
 - [Databricks Dashboard from Scratch with latest AI features](https://www.youtube.com/watch?v=vanOstY5Jes)
@@ -90,11 +92,13 @@ Most importants topics to master Databricks.
 
 #### DQX
 -[DQX Features & Demo | Databricks Data Quality Framework for PySpark](https://www.youtube.com/watch?v=zMDLrq4Ymf0)
+- [DQX Studio Demo: No-Code Data Quality on Databricks](https://www.youtube.com/watch?v=OCMHvOBhR90)
 
 
 #### Lakebase
 - [Complete Databricks Lakebase Tutorial](https://www.youtube.com/watch?v=0GUdgdLK67c)
 -[Databricks Lakebase CHANGES The Game For Serverless PostgreSQL](https://www.youtube.com/watch?v=qdv4QcK9G1g)
+- [Databricks Lakebase Explained: Architecture, Branching and Full Demo](https://www.youtube.com/watch?v=uS7z75Bw1aM)
 
 
 #### Lakeflow Designer
