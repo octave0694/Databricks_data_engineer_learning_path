@@ -91,8 +91,9 @@ Most importants topics to master Databricks.
 
 
 #### DQX
--[DQX Features & Demo | Databricks Data Quality Framework for PySpark](https://www.youtube.com/watch?v=zMDLrq4Ymf0)
+- [DQX Features & Demo | Databricks Data Quality Framework for PySpark](https://www.youtube.com/watch?v=zMDLrq4Ymf0)
 - [DQX Studio Demo: No-Code Data Quality on Databricks](https://www.youtube.com/watch?v=OCMHvOBhR90)
+- [DXQ Page](https://databrickslabs.github.io/dqx/)
 
 
 #### Lakebase
